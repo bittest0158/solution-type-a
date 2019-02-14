@@ -36,27 +36,41 @@ public class Main {
 			if( index == 0 ) {
 				if( randomNum[numIndex] == userNum[numIndex+1] ) {
 					b++;
+				} else {
+					o++;
 				}
 				if( randomNum[numIndex] == userNum[numIndex+2] ) {
 					b++;
-				}
-				if( randomNum[numIndex] != randomNum[numIndex+1] && randomNum[numIndex] != randomNum[numIndex+2] && randomNum[numIndex+1] != randomNum[numIndex+2] ) {
+				} else {
 					o++;
 				}
 			} else if( index == 1 ) {
 				if( randomNum[numIndex] == userNum[numIndex+1] ) {
 					b++;
+				} else {
+					o++;
 				}
 			}
 			
 			System.out.println((index+1) + " - " + "S:" + s +", " + "B:" + b + ", " + "O:" + o);
+			
+			for( int i = 0; i < randomNum.length; i++ ) {
+				randomStr += String.valueOf(randomNum[i]);
+				userStr += String.valueOf(userNum[i]);
+			}
+			
+			randomInt = Integer.parseInt(randomStr);
+			user = Integer.parseInt(userStr);
+			
+			if( randomInt == user ) {
+				break;
+			}
 			
 			index++;
 			numIndex++;
 			if( numIndex == 3 ) {
 				numIndex = 0;
 			}
-			
 		}
 		
 	}
